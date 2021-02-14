@@ -6,14 +6,14 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 16:15:07 by pbillett          #+#    #+#             */
-/*   Updated: 2021/02/14 14:00:43 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/14 14:26:15 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
 
-char		ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*substr;
@@ -25,10 +25,7 @@ char		ft_substr(char const *s, unsigned int start, size_t len)
 	if (substr == NULL)
 		return (NULL);
 	while (i < len)
-	{
-		substr[i] = s[start + i];
-		i++;
-	}
+		substr[i] = s[start + i++];
 	substr[i] = '\0';
 	return (substr);
 }
