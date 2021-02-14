@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_substr_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/07 16:15:07 by pbillett          #+#    #+#             */
-/*   Updated: 2021/02/14 11:59:29 by llemes-f         ###   ########.fr       */
+/*   Created: 2021/02/14 11:55:03 by llemes-f          #+#    #+#             */
+/*   Updated: 2021/02/14 11:55:09 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 
-char		ft_substr(char const *s, unsigned int start, size_t len)
+
+#include <stdio.h>
+#include "../src/ft_substr.c"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+int main(void)
 {
-	size_t	i;
-	char	*substr;
-
-	i = 0;
-	if (!(s))
-		return (NULL);
-	substr = (char *)malloc((len + 1) * sizeof(*s));
-	if (substr == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		substr[i] = s[start + i];
-		i++;
-	}
-	substr[i] = '\0';
-	return (substr);
+    char *nome = "Lucas Lemes";
+    char *substr;
+    substr = ft_substr(nome, 0, 5);
+    printf("Antes do substr: %s \n", nome);
+    printf("Apos o substr: %s", substr);
+    return 0;
 }
