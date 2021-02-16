@@ -1,4 +1,9 @@
+#include "../libft.h"
+
 int ft_isalnum(int c)
 {
-  //Verificar se é um caractere alfanumero
+  if (ft_isalpha(c) || ft_isdigit(c))
+    return (1);
+  else
+    return (0);
 }
