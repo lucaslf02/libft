@@ -1,8 +1,8 @@
 #include "../libft.h"
 
-int ft_isalpha(int c)
+int isupper(int c)
 {
-  if (ft_islower(c) || ft_isupper(c))
+  if (c >= 65 && c <= 90)
     return (1);
   else
     return (0);
