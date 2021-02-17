@@ -1,4 +1,9 @@
+#include "../libft.h"
+
 int ft_isalpha(int c)
 {
-  //Verificar se é um caractere alfabetico, equivalente a (islower || isupper)
+  if (ft_islower(c) || ft_isupper(c))
+    return (1);
+  else
+    return (0);
 }
