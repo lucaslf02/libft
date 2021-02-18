@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:55:31 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/17 21:15:53 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/17 22:02:37 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int isupper(int c);
 int ft_isdigit(int c);
 int ft_isalpha(int c);
 int	ft_isalnum(int c);
+int	isascii(int c);
 void    ft_bzero(void *s, size_t length);
 void	*memccpy(void *dest, const void *src, int c, size_t n);
 void	*memcpy(void *dest, const void *src, size_t n);
