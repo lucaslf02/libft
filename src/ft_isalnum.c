@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 20:47:34 by llemes-f          #+#    #+#             */
+/*   Updated: 2021/02/17 20:48:36 by llemes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-  if (ft_isalpha(c) || ft_isdigit(c))
-    return (1);
-  else
-    return (0);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	else
+		return (0);
 }
