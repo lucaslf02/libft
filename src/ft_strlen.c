@@ -6,13 +6,13 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 14:20:37 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/14 15:13:18 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/14 16:56:31 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_len(char const *s)
+size_t	ft_strlen(char const *s)
 {
 	size_t i;
 

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 20:49:21 by llemes-f          #+#    #+#             */
+/*   Updated: 2021/02/17 20:49:49 by llemes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-  if (ft_islower(c) || ft_isupper(c))
-    return (1);
-  else
-    return (0);
+	if (ft_islower(c) || ft_isupper(c))
+		return (1);
+	else
+		return (0);
 }
