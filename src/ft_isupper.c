@@ -6,13 +6,13 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 20:52:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/17 20:52:15 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/18 20:51:24 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	isupper(int c)
+int	ft_isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (1);

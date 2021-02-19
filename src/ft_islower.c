@@ -6,13 +6,13 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 20:51:22 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/17 20:51:38 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/18 20:51:47 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	islower(int c)
+int	ft_islower(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (1);
