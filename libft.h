@@ -30,6 +30,7 @@ void    ft_bzero(void *s, size_t length);
 void	*memccpy(void *dest, const void *src, int c, size_t n);
 void	*memcpy(void *dest, const void *src, size_t n);
 void *memmove(void *dest, const void *src, size_t n);
+void *memchr(const void *s, int c, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
