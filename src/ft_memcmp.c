@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:47:24 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/18 20:57:53 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:51:33 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (n)
 	{
 		if (*s1_aux != *s2_aux)
-			return (*s1_aux - *s2_aux));
+			return (*s1_aux - *s2_aux);
 		s1_aux--;
 		s2_aux--;
 		n--;
