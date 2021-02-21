@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:55:31 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/20 14:58:26 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/21 20:36:01 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int ft_isdigit(int c);
 int ft_isalpha(int c);
 int	ft_isalnum(int c);
 int	ft_isascii(int c);
+int	ft_isspace(int c)
 int	ft_isprint(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
@@ -37,6 +38,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char	*big, const char *little, size_t len);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_atoi(const char *nptr);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
