@@ -15,8 +15,8 @@
 
 int main(void)
 {
-    char *nome      = "Lucas";  
-    char *sobrenome = " Lemes";
+    char *nome      = NULL;  
+    char *sobrenome = "";
     char *join;
     join = ft_strjoin(nome, sobrenome);
     printf("String Join: %s \n", join);

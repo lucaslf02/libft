@@ -15,26 +15,29 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
 	char	*join;
+	char	*join_res;
 
-	i = 0;
-	j = 0;
-	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (join == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	while (s1[i])
+	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!join)
+		return (NULL);
+	join_res = join;
+	while (*s1)
 	{
-		join[i] = s1[i];
-		i++;
+		*join = *s1;
+		join++;
+		s1++;
 	}
-	while (s2[j])
+	while (*s2)
 	{
-		join[i] = s2[j];
-		i++;
-		j++;
+		*join = *s2;
+		join++;
+		s2++;
 	}
-	join[i] = '\0';
-	return (join);
+	*join = '\0';
+	return (join_res);
 }
+
+
