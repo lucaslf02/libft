@@ -16,11 +16,11 @@
 
 int main(void)
 {
-    char nome[] = "Lucas";
+    char nome[] = "   Lucas   ";
     char *set = " ";
     char *strtrim;
-    strtrim = ft_substr(nome, 2, 4);
+    strtrim = ft_strtrim(nome, set);
     printf("Antes do strtrim: %s \n", nome);
-    printf("Apos o strtrim: %s \n", ft_substr("lucas", 2, 4));
+    printf("Apos o strtrim: %s \n", strtrim);
     return 0;
 }
