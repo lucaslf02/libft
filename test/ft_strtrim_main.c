@@ -16,8 +16,8 @@
 
 int main(void)
 {
-    char nome[] = "   Lucas   ";
-    char *set = " ";
+    char nome[] = "-*-*-*-Lucas-*";
+    char *set = "*-";
     char *strtrim;
     strtrim = ft_strtrim(nome, set);
     printf("Antes do strtrim: %s \n", nome);
