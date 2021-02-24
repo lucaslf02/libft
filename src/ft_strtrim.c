@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:16:32 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/23 20:05:13 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:57:24 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	begin;
 	size_t	end;
 	size_t	len;
-	char *	trim;
+	char	*trim;
 
 	if (!s1 || !set)
 		return (NULL);

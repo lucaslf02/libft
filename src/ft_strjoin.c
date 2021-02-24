@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 14:02:44 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/14 16:56:41 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:57:03 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*join = '\0';
 	return (join_res);
 }
-
-
