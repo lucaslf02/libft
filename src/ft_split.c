@@ -11,13 +11,9 @@
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include "stdlib.h"
 
-char	**ft_split(char const *s, char c)
-{
-	
-}
-
-int		number_str(char const *s, char c)
+size_t	number_str(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -40,4 +36,54 @@ int		number_str(char const *s, char c)
 		i++;
 	}	
 	return (n_str);
+}
+
+char	*scissor(char const *s, char const c)
+{
+	size_t	i;
+
+	i = 0;
+	while(s[i] != c && s[i] != '\0' )
+		i++;
+	return (ft_substr(s, 0, (i-1)));
+}
+
+char	**wipe_tab(char **tab)
+{
+	size_t i;
+
+	i = 0;
+	while(tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab[i]);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t i;
+	size_t j;
+	char	**tab;
+	
+	if (!s)
+		return (NULL);
+	i = 0;
+	j = 0;	
+	if(!(tab = (char **)malloc(sizeof(char) * ((number_str(s, c) + 1)))))
+		return (NULL);
+	while(*s != '\0')
+	{
+		while(s[i] != c && s[i] != '\0')
+			i++;
+		if(!(tab[j] = scissor(s, c)) && i > 0)
+			return (wipe_tab(tab));
+		s + i + 1;
+		i = 0;
+		j++;
+	}
+	tab[j] = NULL;
+	return tab;
 }
