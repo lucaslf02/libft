@@ -24,11 +24,11 @@ size_t	number_str(char const *s, char c)
 	i = 0;
 	n_str = 0;
 	acc = 0;
-	while (i < len)
-	{
+	while (i <= len)
+	{		
 		if (s[i] != c)
 			acc = 1;
-		if (s[i] == c && acc == 1)
+		if ((s[i] == c || s[i] == '\0') && acc == 1)
 		{
 			acc = 0;
 			n_str++;
@@ -45,7 +45,7 @@ char	*scissor(char const *s, char const c)
 	i = 0;
 	while(s[i] != c && s[i] != '\0' )
 		i++;
-	return (ft_substr(s, 0, (i-1)));
+	return (ft_substr(s, 0, (i)));
 }
 
 char	**wipe_tab(char **tab)
@@ -69,21 +69,21 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	
 	if (!s)
+		return (NULL);	
+	if(!(tab = (char **)malloc(sizeof(char) * ((number_str(s, c) + 1)))))
 		return (NULL);
 	i = 0;
 	j = 0;	
-	if(!(tab = (char **)malloc(sizeof(char) * ((number_str(s, c) + 1)))))
-		return (NULL);
 	while(*s != '\0')
-	{
+	{		
 		while(s[i] != c && s[i] != '\0')
 			i++;
 		if(!(tab[j] = scissor(s, c)) && i > 0)
 			return (wipe_tab(tab));
-		s + i + 1;
+		s = s + i + 1;
 		i = 0;
 		j++;
-	}
-	tab[j] = NULL;
+	}	
+	tab[j-1] = NULL;	
 	return tab;
 }

@@ -15,9 +15,9 @@
 
 int main(void)
 {
-    char *nome      = "LUCAS,LEMES";  
+    char *nome      = "DOM,SEG,TER,QUA,QUI,SEX,SAB";  
     char **split;
     split = ft_split(nome, ',');
-    printf("String Join: %s \n", split[0]);
+    printf("String Split: %s \n", split[6]);
     return 0;
 }
