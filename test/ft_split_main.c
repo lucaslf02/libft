@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 11:55:03 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/24 21:32:55 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/25 20:42:33 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int main(void)
 {
-    char *nome      = "LUCAS,LEMES";
+    char *nome      = "DOM,SEG,TER,QUA,QUI,SEX,SAB";  
     char **split;
-    // split = ft_split(nome, ',');
-    printf("String split: %s \n", nome);
+    split = ft_split(nome, ',');
+    printf("String Split: %s \n", split[6]);
     return 0;
 }
