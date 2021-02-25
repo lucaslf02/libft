@@ -6,14 +6,14 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/23 21:31:47 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/24 21:53:52 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "stdlib.h"
 
-size_t	number_str(char const *s, char c)
+static size_t	number_str(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -38,7 +38,7 @@ size_t	number_str(char const *s, char c)
 	return (n_str);
 }
 
-char	*scissor(char const *s, char const c)
+static char	*scissor(char const *s, char const c)
 {
 	size_t	i;
 
@@ -48,7 +48,7 @@ char	*scissor(char const *s, char const c)
 	return (ft_substr(s, 0, (i-1)));
 }
 
-char	**wipe_tab(char **tab)
+static char	**wipe_tab(char **tab)
 {
 	size_t i;
 
