@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:55:31 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/23 20:58:36 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:36:30 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char *ft_itoa(int n);
+int		ft_pow(int base, int exp);
 
 #endif
