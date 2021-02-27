@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:09:27 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 18:16:37 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 18:21:03 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new) 
+	if (lst && new)
 	{
 		if (*lst)
 			new->next = *lst;
