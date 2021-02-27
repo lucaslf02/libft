@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_fd_main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/27 09:51:20 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 10:34:01 by llemes-f         ###   ########.fr       */
+/*   Created: 2021/02/14 11:55:03 by llemes-f          #+#    #+#             */
+/*   Updated: 2021/02/27 10:32:56 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include "unistd.h"
+#include "stdio.h"
 
-void	ft_putchar_fd(char c, int fd)
+int main(void)
 {
-	write(fd, &c, 1);
+    FILE *inp;
+    inp = fopen("/home/lucas/Documentos/entrada.txt","w");
+    ft_putchar_fd('9', fileno(inp));
+    // fclose(inp);
 }
