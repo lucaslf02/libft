@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:51:48 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/20 13:15:02 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 19:55:02 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ char	*ft_strrchr(const char *s, int c)
 	while (size--)
 		if (s[size] == c)
 			return (&s[size]);
-	return (NULL);	
+	return (NULL);
 }

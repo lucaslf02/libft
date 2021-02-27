@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 16:15:07 by pbillett          #+#    #+#             */
-/*   Updated: 2021/02/17 20:41:46 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 19:54:33 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*substr;
+
 	if (len == 0)
 		return (NULL);
 	i = 0;

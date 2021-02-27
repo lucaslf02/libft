@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:36:04 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/25 21:36:39 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 19:55:58 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_pow(int base, int exp)
 {
 	int pow;
+
 	pow = 1;
 	while (exp--)
 		pow *= base;

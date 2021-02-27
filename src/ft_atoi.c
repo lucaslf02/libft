@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 10:34:00 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/21 20:49:49 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 19:53:48 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_atoi(const char *nptr)
 	nbr = 0;
 	signal = 1;
 	i = 0;
-
 	while (ft_isspace(nptr[i]))
 		i++;
 	while (nptr[i] == '-' || nptr[i] == '+')
@@ -33,7 +32,7 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		nbr = nbr * 10 + (nptr[i] - 48);
-		i++;	
-	}	
+		i++;
+	}
 	return (nbr * signal);
 }
