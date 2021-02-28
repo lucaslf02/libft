@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 12:25:08 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 13:43:05 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,15 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	while (*s)
-	{		
+	{
 		while (s[i] != c && s[i])
 			i++;
 		if (i > 0)
-		{
 			if (!(tab[j] = ft_substr(s, 0, i)))
 				return (wipe_tab(tab));
-			else
-				j++;
-		}
-		s = i > 0 ? s + i: s + 1;
-		i = 0;		
+		s = i > 0 ? s + i : s + 1;
+		j = i > 0 ? j + 1 : j;
+		i = 0;
 	}
 	tab[j + 1] = NULL;
 	return (tab);

@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 20:52:50 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 22:36:03 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 13:40:42 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	i = 0;
 	dest_aux = (unsigned char*)dest;
-	src_aux  = (unsigned char*)src;
-	c_aux    = (unsigned char)c;
+	src_aux = (unsigned char*)src;
+	c_aux = (unsigned char)c;
 	while (i < n)
 	{
 		dest_aux[i] = src_aux[i];
