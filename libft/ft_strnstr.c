@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 13:15:13 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 19:19:31 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 19:21:57 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t len_little;
+	unsigned int	n;
+	size_t			len_little;
 
-	if (!little)
-		return ((char*)little);
-	i = 0;
+	if (*little == '\0')
+		return (char*)(big);
+	n = 0;
 	len_little = ft_strlen(little);
-	while (i < len)
+	while (*big != '\0')
 	{
-		if (ft_strncmp(&big[i], little, len_little) == 0)
-			return ((char *)&big[i]);
-		i++;
+		if (len < (n + len_little))
+			return (NULL);
+		if (ft_strncmp(big, little, len_little) == 0)
+			return (char*)(big);
+		big++;
+		n++;
 	}
 	return (NULL);
 }
