@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 21:25:21 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 21:13:56 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 18:44:05 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	int		len;
 	int		i;
 
-	len = ft_strlen(s);
+	len = ft_strlen(s) + 1;
 	s_aux = (char *)malloc(len * sizeof(char));
 	if (!s_aux)
 		return (NULL);

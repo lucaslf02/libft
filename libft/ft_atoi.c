@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 10:34:00 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 22:27:54 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 18:39:39 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	nbr;
-	unsigned int	signal;
-	unsigned int	i;
+	unsigned long int	nbr;
+	unsigned long int	signal;
+	unsigned long int	i;
 
 	nbr = 0;
 	signal = 1;
@@ -31,5 +31,5 @@ int	ft_atoi(const char *nptr)
 		nbr = nbr * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return (nbr * signal);
+	return ((int)(nbr * signal));
 }
