@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 21:05:58 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 18:42:14 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 19:01:36 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void *ptr;
 
-	if (nmemb == 0)
+	if (!nmemb || !size)
 		return (NULL);
 	if (!(ptr = malloc(size * nmemb)))
 		return (NULL);
