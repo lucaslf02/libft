@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 13:15:13 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 19:05:43 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 19:08:12 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t i;
 	size_t len_little;
 
+	if (!*little)
+		return (NULL);
 	i = 0;
 	len_little = ft_strlen(little);
 	while (i < len)
