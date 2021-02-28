@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:40:21 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 18:36:01 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 18:59:15 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*dest_aux;
 	char	*src_aux;
 
-	if (!dest || !src || !n)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	aux_n = (int)(n - 1);
