@@ -6,49 +6,33 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 21:13:49 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/28 12:25:08 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
 
-static size_t	number_str(char const *s, char c)
+int		number_str(char const *s, char c)
 {
-	size_t	i;
-	size_t	len;
-	size_t	acc;
-	size_t	n_str;
+	int	i;
+	int	n_str;
 
-	len = ft_strlen(s);
 	i = 0;
 	n_str = 0;
-	acc = 0;
-	while (i <= len)
+	if (s[i] == '\0')
+		return (0);
+	while (s[i + 1])
 	{
-		if (s[i] != c)
-			acc = 1;
-		if ((s[i] == c || s[i] == '\0') && acc == 1)
-		{
-			acc = 0;
+		if (s[i] == c && s[i + 1] != c)
 			n_str++;
-		}
 		i++;
 	}
+	if (s[i] != c)
+		n_str++;
 	return (n_str);
 }
 
-static char		*scissor(char const *s, char const c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	return (ft_substr(s, 0, (i)));
-}
-
-static char		**wipe_tab(char **tab)
+char	**wipe_tab(char **tab)
 {
 	size_t i;
 
@@ -62,7 +46,7 @@ static char		**wipe_tab(char **tab)
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -70,20 +54,24 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(tab = (char **)malloc(sizeof(char) * ((number_str(s, c) + 1)))))
+	if (!(tab = (char **)malloc(sizeof(char*) * ((number_str(s, c) + 1)))))
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (*s != '\0')
-	{
-		while (s[i] != c && s[i] != '\0')
+	while (*s)
+	{		
+		while (s[i] != c && s[i])
 			i++;
-		if (!(tab[j] = scissor(s, c)) && i > 0)
-			return (wipe_tab(tab));
-		s = s + i + 1;
-		i = 0;
-		j++;
+		if (i > 0)
+		{
+			if (!(tab[j] = ft_substr(s, 0, i)))
+				return (wipe_tab(tab));
+			else
+				j++;
+		}
+		s = i > 0 ? s + i: s + 1;
+		i = 0;		
 	}
-	tab[j - 1] = NULL;
+	tab[j + 1] = NULL;
 	return (tab);
 }

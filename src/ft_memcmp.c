@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:47:24 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 21:19:34 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 22:38:26 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*s1_aux != *s2_aux)
 			return (*s1_aux - *s2_aux);
-		s1_aux--;
-		s2_aux--;
+		s1_aux++;
+		s2_aux++;
 		n--;
 	}
 	return (0);

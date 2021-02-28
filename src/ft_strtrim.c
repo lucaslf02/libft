@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:16:32 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 21:22:44 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 23:20:43 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	begin = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	while (s1[begin] != '\0' && (char *)ft_strchr(set, s1[begin]))
 		begin++;
-	while (end && (char *)ft_strchr(set, s1[end]))
+	while (end > begin && (char *)ft_strchr(set, s1[end - 1]))
 		end--;
-	len = (end - begin) + 1;
+	len = (end - begin);
 	return (ft_substr(s1, begin, len));
 }
