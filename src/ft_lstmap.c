@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 19:07:39 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 19:31:06 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:12:49 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -27,7 +27,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(list, element);
+		ft_lstadd_back(&list, element);
 		lst = lst->next;
 	}
 	return (list);

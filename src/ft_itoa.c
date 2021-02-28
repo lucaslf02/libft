@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:09:14 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/26 20:58:27 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:12:24 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include "stdlib.h"
 
 char	*ft_itoa(int n)

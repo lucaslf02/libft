@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/25 20:40:07 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:13:49 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include "stdlib.h"
 
 static size_t	number_str(char const *s, char c)

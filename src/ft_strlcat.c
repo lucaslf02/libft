@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 21:34:40 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/20 13:07:44 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:14:06 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

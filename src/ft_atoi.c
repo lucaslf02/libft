@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 10:34:00 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 19:53:48 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:10:45 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

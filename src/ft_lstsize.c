@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:17:49 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/27 18:20:40 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:13:02 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

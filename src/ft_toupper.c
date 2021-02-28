@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 22:22:28 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/18 20:48:52 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:15:01 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

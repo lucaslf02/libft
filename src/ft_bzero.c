@@ -6,11 +6,11 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 20:43:34 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/17 20:47:14 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:11:06 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t length)
 {

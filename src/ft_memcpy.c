@@ -6,15 +6,15 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 20:57:11 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/18 20:52:28 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:20:07 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int		i;
+	size_t	i;
 	void	*dest_aux;
 
 	i = 0;
