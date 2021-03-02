@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 17:28:54 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/01 21:20:34 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,6 @@ int		number_str(char const *s, char c)
 	return (n_str);
 }
 
-char	**wipe_tab(char **tab)
-{
-	size_t i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab[i]);
-	return (NULL);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -64,7 +50,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (i > 0)
 			if (!(tab[j] = ft_substr(s, 0, i)))
-				return (wipe_tab(tab));
+				return (NULL);
 		s = i > 0 ? s + i : s + 1;
 		j = i > 0 ? j + 1 : j;
 		i = 0;
