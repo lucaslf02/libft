@@ -12,24 +12,25 @@
 
 #include "libft.h"
 
-static int			count_words(char const *s, char c)
+static int			number_str(char const *s, char c)
 {
-	size_t word_count;
-	size_t skipper;
+	size_t n_str;
+	size_t jump;
 
 	word_count = 0;
-	skipper = 1;
+	jump = 1;
 	while (*s)
 	{
-		if (*s != c && skipper)
+		if (*s != c && jump)
 		{
-			skipper = 0;
-			word_count++;
+			jump = 0;
+			s++;
+			n_str++;
 		}
 		else if (*s++ == c)
-			skipper = 1;
+			jump = 1;
 	}
-	return (word_count);
+	return (n_str);
 }
 
 static char const	*skip_equal_chars(char const *s, char c)
@@ -67,7 +68,7 @@ char				**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	word_count = count_words(s, c);
+	word_count = number_str(s, c);
 	words = malloc(sizeof(char **) * (word_count + 1));
 	if (words == NULL)
 		return (NULL);
