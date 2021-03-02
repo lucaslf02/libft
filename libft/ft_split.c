@@ -6,72 +6,71 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/01 21:28:12 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/02 20:16:24 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			number_str(char const *s, char c)
-{
-	size_t n_str;
-	size_t jump;
+#include "libft.h"
 
+int		number_str(char const *s, char c)
+{
+	int	i;
+	int	n_str;
+
+	i = 0;
 	n_str = 0;
-	jump = 1;
-	while (*s)
+	if (s[i] == '\0')
+		return (0);
+	while (s[i + 1])
 	{
-		if (*s != c && jump)
-		{
-			jump = 0;
-			s++;
+		if (s[i] == c && s[i + 1] != c)
 			n_str++;
-		}
-		else if (*s++ == c)
-			jump = 1;
+		i++;
 	}
+	if (s[i] != c)
+		n_str++;
 	return (n_str);
 }
 
-static char const	*skip_equal_chars(char const *s, char c)
+char	**wipe_tab(char **tab)
 {
-	while (*s && *s == c)
-		s++;
-	return (s);
-}
+	size_t i;
 
-static void			create_words(
-	char **words, char const *s, char c, size_t word_count)
-{
-	char *pointerator;
-
-	s = skip_equal_chars(s, c);
-	while (word_count--)
+	i = 0;
+	while (tab[i])
 	{
-		pointerator = ft_strchr(s, c);
-		if (pointerator != NULL)
-		{
-			*words = ft_substr(s, 0, pointerator - s);
-			s = skip_equal_chars(pointerator, c);
-		}
-		else
-			*words = ft_substr(s, 0, ft_strlen(s) + 1);
-		words++;
+		free(tab[i]);
+		i++;
 	}
-	*words = NULL;
+	free(tab[i]);
+	return (NULL);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t	word_count;
-	char	**words;
+	size_t	i;
+	size_t	j;
+	char	**tab;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	word_count = number_str(s, c);
-	words = malloc(sizeof(char **) * (word_count + 1));
-	if (words == NULL)
+	if (!(tab = (char **)malloc(sizeof(char**) * ((number_str(s, c) + 1)))))
 		return (NULL);
-	create_words(words, s, c, word_count);
-	return (words);
+	i = 0;
+	j = 0;
+	while (*s)
+	{
+		while (s[i] != c && s[i])
+			i++;
+		if (i > 0)
+			if (!(tab[j] = ft_substr(s, 0, i)))
+				return (wipe_tab(tab));
+		s = i > 0 ? s + i : s + 1;
+		j = i > 0 ? j + 1 : j;
+		i = 0;
+	}
+	tab[j + 1] = NULL;
+	return (tab);
 }
