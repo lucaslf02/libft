@@ -17,7 +17,7 @@ static int			number_str(char const *s, char c)
 	size_t n_str;
 	size_t jump;
 
-	word_count = 0;
+	n_str = 0;
 	jump = 1;
 	while (*s)
 	{
