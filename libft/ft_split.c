@@ -6,13 +6,13 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/01 21:20:34 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/01 21:26:02 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		number_str(char const *s, char c)
+static int			number_str(char const *s, char c)
 {
 	int	i;
 	int	n_str;
@@ -32,29 +32,44 @@ int		number_str(char const *s, char c)
 	return (n_str);
 }
 
-char	**ft_split(char const *s, char c)
+static char const	*skip_equal_chars(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	char	**tab;
+	while (*s && *s == c)
+		s++;
+	return (s);
+}
+
+static void			create_words(
+	char **words, char const *s, char c, size_t word_count)
+{
+	char *pointerator;
+
+	s = skip_equal_chars(s, c);
+	while (word_count--)
+	{
+		pointerator = ft_strchr(s, c);
+		if (pointerator != NULL)
+		{
+			*words = ft_substr(s, 0, pointerator - s);
+			s = skip_equal_chars(pointerator, c);
+		}
+		else
+			*words = ft_substr(s, 0, ft_strlen(s) + 1);
+		words++;
+	}
+	*words = NULL;
+}
+
+char				**ft_split(char const *s, char c)
+{
+	size_t	word_count;
+	char	**words;
 
 	if (!s)
 		return (NULL);
-	if (!(tab = (char **)malloc(sizeof(char*) * ((number_str(s, c) + 1)))))
+	word_count = number_str(s, c);
+	if (!(words = (char **)malloc(sizeof(char*) * (word_count + 1))))
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (*s)
-	{
-		while (s[i] != c && s[i])
-			i++;
-		if (i > 0)
-			if (!(tab[j] = ft_substr(s, 0, i)))
-				return (NULL);
-		s = i > 0 ? s + i : s + 1;
-		j = i > 0 ? j + 1 : j;
-		i = 0;
-	}
-	tab[j + 1] = NULL;
-	return (tab);
+	create_words(words, s, c, word_count);
+	return (words);
 }
