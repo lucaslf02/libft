@@ -23,9 +23,9 @@ int		get_len(int n)
 		n = n * (-1);
 		len++;
 	}		
-	while (aux > 0)
+	while (n > 0)
 	{
-		aux /= 10;
+		n /= 10;
 		len++;
 	}		
 	return (len)
