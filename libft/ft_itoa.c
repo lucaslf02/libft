@@ -33,26 +33,27 @@ int		get_len(int n)
 
 char	*ft_itoa(int n)
 {
-	char			*nbr;
-	char			*nbr_ptr;
-	int				len;
+	char					*nbr;
+	int						i;
+	int						len;
 	unsigned int	aux;
 
 	len = get_len(n);	
 	aux = n < 0 ? n * (-1) : n;
 	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	nbr_ptr = nbr;
+	i = 0;
 	if (n < 0)
 	{
-		*nbr++ = '-';
-		len--;
+		*nbr[i] = '-';
+		i++;
 	}
-	while (len)
+	while (i < len)
 	{
-		*nbr++ = ((aux / ft_pow(10, len)) + 48);
-		aux %= ft_pow(10, len--);
+		nbr[i] = ((aux / ft_pow(10, i)) + 48);
+		aux %= ft_pow(10, i);
+		i++;
 	}
-	*nbr = '\0';
-	return (nbr_ptr);
+	nbr[i] = '\0';
+	return (nbr);
 }
