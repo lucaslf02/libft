@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:09:14 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/03 20:31:40 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/03 20:36:47 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ char	*ft_itoa(int n)
 	i = 0;
 	if (n < 0)
 		nbr[i++] = '-';
+	len--;
 	while (i < (len - 1))
 	{
-		nbr[i] = ((aux / ft_pow(10, (len - i - 1))) + 48);
-		aux %= ft_pow(10, (len - i - 1));
+		nbr[i] = ((aux / ft_pow(10, (len - i))) + 48);
+		aux %= ft_pow(10, (len - i));
 		i++;
 	}
 	nbr[i] = '\0';
