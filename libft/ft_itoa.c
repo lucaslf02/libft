@@ -13,6 +13,24 @@
 #include "libft.h"
 #include "stdlib.h"
 
+int		get_len(int n)
+{
+	int len;
+
+	len = 0;
+	if (n < 0)
+	{
+		n = n * (-1);
+		len++;
+	}		
+	while (aux > 0)
+	{
+		aux /= 10;
+		len++;
+	}		
+	return (len)
+}
+
 char	*ft_itoa(int n)
 {
 	char			*nbr;
@@ -20,12 +38,9 @@ char	*ft_itoa(int n)
 	int				len;
 	unsigned int	aux;
 
+	len = get_len(n);	
 	aux = n < 0 ? n * (-1) : n;
-	len = n < 0 ? (1) : 0;
-	while ((aux /= 10) > 0)
-		len++;
-	aux = n < 0 ? n * (-1) : n;
-	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))) || n == NULL)
+	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	nbr_ptr = nbr;
 	if (n < 0)
@@ -33,7 +48,7 @@ char	*ft_itoa(int n)
 		*nbr++ = '-';
 		len--;
 	}
-	while (len != -1)
+	while (len)
 	{
 		*nbr++ = ((aux / ft_pow(10, len)) + 48);
 		aux %= ft_pow(10, len--);
