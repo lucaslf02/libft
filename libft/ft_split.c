@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/02 20:16:24 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/02 21:05:27 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,63 +14,65 @@
 
 #include "libft.h"
 
-int		number_str(char const *s, char c)
+static int			number_str(char const *s, char c)
 {
-	int	i;
-	int	n_str;
+	size_t n_str;
+	size_t jump;
 
-	i = 0;
 	n_str = 0;
-	if (s[i] == '\0')
-		return (0);
-	while (s[i + 1])
+	jump = 1;
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if (*s != c && jump)
+		{
+			jump = 0;
+			s++;
 			n_str++;
-		i++;
+		}
+		else if (*s++ == c)
+			jump = 1;
 	}
-	if (s[i] != c)
-		n_str++;
 	return (n_str);
 }
 
-char	**wipe_tab(char **tab)
+static char const	*jump_char(char const *s, char c)
 {
-	size_t i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab[i]);
-	return (NULL);
+	while (*s && *s == c)
+		s++;
+	return (s);
 }
 
-char	**ft_split(char const *s, char c)
+static void			tab_gen(char **tab, char const *s, char c, size_t len_tab)
 {
-	size_t	i;
-	size_t	j;
+	char *i_poiter;
+
+	s = jump_char(s, c);
+	while (len_tab--)
+	{
+		i_poiter = ft_strchr(s, c);
+		if (i_poiter != NULL)
+		{
+			*tab = ft_substr(s, 0, (i_poiter - s));
+			s = jump_char(i_poiter, c);
+		}
+		else
+			*tab = ft_substr(s, 0, ft_strlen(s) + 1);
+		tab++;
+	}
+	*tab = NULL;
+}
+
+char				**ft_split(char const *s, char c)
+{
+	size_t	len_tab;
 	char	**tab;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	if (!(tab = (char **)malloc(sizeof(char**) * ((number_str(s, c) + 1)))))
+	len_tab = number_str(s, c);
+	tab = (char **)malloc(sizeof(char **) * (len_tab + 1));
+	if (tab == NULL)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (*s)
-	{
-		while (s[i] != c && s[i])
-			i++;
-		if (i > 0)
-			if (!(tab[j] = ft_substr(s, 0, i)))
-				return (wipe_tab(tab));
-		s = i > 0 ? s + i : s + 1;
-		j = i > 0 ? j + 1 : j;
-		i = 0;
-	}
-	tab[j + 1] = NULL;
+	tab_gen(tab, s, c, len_tab);
 	return (tab);
 }
