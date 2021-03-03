@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:09:14 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/02/28 19:42:43 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/02 21:40:11 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	while ((aux /= 10) > 0)
 		len++;
 	aux = n < 0 ? n * (-1) : n;
-	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(nbr = (char *)malloc(sizeof(char) * (len))))
 		return (NULL);
 	nbr_ptr = nbr;
 	if (n < 0)
