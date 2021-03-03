@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	while ((aux /= 10) > 0)
 		len++;
 	aux = n < 0 ? n * (-1) : n;
-	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(nbr = (char *)malloc(sizeof(char) * (len + 1))) || n == NULL)
 		return (NULL);
 	nbr_ptr = nbr;
 	if (n < 0)
