@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:09:14 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/03 20:36:47 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/03 22:10:05 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 int		get_len(int n)
 {
-	int len;
+	int				len;
+	unsigned int	aux;
 
 	len = 0;
+	aux = n < 0 ? n * (-1) : n;
 	if (n < 0)
-	{
-		n = n * (-1);
 		len++;
-	}
-	while (n > 0)
+	while (aux > 0)
 	{
-		n /= 10;
+		aux /= 10;
 		len++;
 	}
 	return (len);
@@ -46,7 +45,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		nbr[i++] = '-';
 	len--;
-	while (i < (len - 1))
+	while (i <= (len))
 	{
 		nbr[i] = ((aux / ft_pow(10, (len - i))) + 48);
 		aux %= ft_pow(10, (len - i));
