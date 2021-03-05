@@ -20,9 +20,9 @@ git clone https://github.com/Tripouille/libftTester.git
 #cd ..
 
 # RUN libft-unit-test
-cd libft-unit-test
-make f
-cd ..
+# cd libft-unit-test
+# make f
+# cd ..
 
 # RUN libft-war-machine
 #cd libft-war-machine
@@ -34,8 +34,8 @@ cd ..
 # RUN libftTester
 #cd libftTester
 # CONFIGURE MAKEFILE MANUALLY: FT_PATH=../libft
-#make
-cd ..
+# #make
+# cd ..
 
 # CLEANUP
 rm -rf libft Libftest libft-unit-test libft-war-machine libftTester teste
