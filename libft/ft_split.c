@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:58:02 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/03/02 21:05:27 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/03/06 12:48:22 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void			tab_gen(char **tab, char const *s, char c, size_t len_tab)
 			s = jump_char(i_poiter, c);
 		}
 		else
-			*tab = ft_substr(s, 0, ft_strlen(s) + 1);
+			*tab = ft_substr(s, 0, ft_strlen(s));
 		tab++;
 	}
 	*tab = NULL;
